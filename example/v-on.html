@@ -2,8 +2,46 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+		<title>v-on实例</title>
 	</head>
 	<body>
+		<h1>v-on实例</h1>
+		<hr />
+		<div id="app">
+			本场比赛得分{{fenshu}}
+			<p>
+				<button v-on:click="jiafen">加分</button>
+				<button v-on:click="jianfen">减分</button><br/>
+				<input type="text" v-on:keyup.38="onenter" v-model.number="fenshu2" />
+			</p>
+		</div>
+		<script src="../assets/js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" charset="utf-8">
+		    var vm=new Vue({
+		    	el:"#app",
+		    	data:{
+		    		fenshu:0,
+		    		fenshu2:1
+		    	  },
+		    	  methods:{
+		    	  	jiafen:function(){
+		    	  		this.fenshu++;
+		    	  	},
+		    	  	jianfen:function(){
+		    	  		this.fenshu--;
+		    	  	},
+		    	  	onenter:function(){
+		    	  		this.fenshu=this.fenshu+this.fenshu2
+		    	  	}
+		    	  	
+		    	  	
+		    	  	
+		    	  }
+		    })
+		    
+		   
+		    
+		    
+		</script>
 	</body>
 </html>
